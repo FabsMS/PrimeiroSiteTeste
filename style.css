@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-size: 20px;
+}
+
+.container{
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+}
+
+/* MANIPULANDO O HEADER */
+
+.header{
+     width: 100%;
+     background-color: #1d1d1d;
+     display: flex;
+     justify-content: space-between;
+     min-height: 40px;
+     align-items: center;
+     flex-wrap: wrap;
+     padding: 30px;
+     gap: 10px 15px;
+}
+
+.logoHeader{
+     padding-left: 30px;
+     width: 250px;
+     height: auto;
+}
+
+.buttonHeader{
+     gap: 20px;
+     display: flex;
+}
+
+.buttonNav{
+     color: white;
+     border: 2px solid transparent;
+     background-color: transparent;
+     font-size: 20px;
+     cursor: pointer;
+     transition: 0.3s;
+     padding: 6px;
+     font-family: 'Raleway';
+}
+
+.buttonNav:hover{
+     border-bottom: 2px solid #d0063b;
+}
+
+/* MANIPULANDO OS TÍTULOS */
+.title{
+     font-size: 30px;
+     font-family: 'Montserrat Subrayada';
+     text-align: center;
+     padding-top: 15px;
+}
+
+.subtitle{
+     font-size: 20px;
+     font-family: 'Montserrat';
+     color: #d0063b;
+     text-align: center;
+     padding-top: 5px;
+}
+
+/* MANIPULANDO O CONTEÚDO PRINCIPAL */
+
+.content{
+     display: grid;
+     grid-template-columns: 3fr 1fr; /* define 3 frames da tela para o conteúdo principal, e apenas 1 frame para a side bar */
+     grid-template-areas: 
+     "principalContent asideContent";
+     padding: 20px;
+     flex: 1 0 auto; /* usado para ocupar todo o espaço disponível */
+}
+
+.cardImage{
+     width: 100%;
+     height: 260px;
+     border-radius: 15px;
+}
+
+.cardContent{
+     width: 400px;
+     height: 500px;
+     border: 2px solid transparent;
+     border-radius: 15px;
+     transition: 0.5s;
+     cursor: pointer;
+}
+
+.cardContent:hover{
+     border: 1.5px solid #1d1d1d;
+}
+
+.principalContent{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 10px;
+     grid-area: principalContent;
+}
+
+.titleCard{
+     font-family: 'Montserrat Subrayada';
+     padding: 5px;
+     font-size: 23px;
+}
+
+.textCard{
+     font-family: 'Montserrat';
+     font-size: 17px;
+     padding: 5px;
+}
+
+/* MANIPULANDO A BARRA LATERAL */
+
+.asideContent{
+     background-color: #1d1d1d;
+     color: white;
+     padding: 18px;
+     border-radius: 8px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     min-width: 300px;
+     grid-area: asideContent;
+     gap: 20px;
+}
+
+.asideImage{
+     width: 100%;
+     border-radius: 15px;
+}
+
+.asideItem{
+     width: 85%; /* quantidade do bloco que itens ocuaparão */
+     border: 1px solid transparent;
+     border-radius: 15px;
+     transition: 0.5s;
+     cursor: pointer;
+}
+
+.asideItem:hover{
+     border-color: white;
+}
+
+.headerAside{
+     font-family: 'Montserrat Subrayada';
+     font-size: 25px;
+}
+
+.titleAside{
+     font-family: 'Montserrat';
+     padding: 5px 0px 5px 8px;
+}
+
+/* MANIPULANDO O FOOTER */
+
+.footer{
+     width: 100%;
+     min-height: 40px;
+     background-color: #1d1d1d;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     padding: 30px;
+     gap: 15px;
+}
+
+.logoFooter{
+     width: 240px;
+     padding-left: 30px;
+}
+
+.anchorFooter{
+     color: white;
+     text-decoration: none;
+     font-family: 'Raleway';
+     border: 2px solid transparent;
+     transition: 0.3s;
+}
+
+.anchorFooter:hover{
+     border-bottom: 2px solid #d0063b;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 740px){
+     .content{
+          grid-template-areas: 
+          "principalContent"
+          "asideContent";
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+     }
+
+     .asideContent{
+          min-width: auto;
+     }
+
+     .principalContent{
+          min-width: auto;
+     }
+}
+
+@media(max-width: 565px){
+     .header{
+          justify-content: center;
+     }
+
+     .logoHeader{
+          padding-left: 0px;
+     }
+}
+
+@media(max-width: 530px){
+     .footer{
+          justify-content: center;
+     }
+
+     .logoFooter{
+          padding-left: 0px;
+     }
+}
+
